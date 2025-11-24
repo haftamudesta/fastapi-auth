@@ -33,7 +33,6 @@ async def upload_file(
         session: AsyncSession = Depends(get_async_session)
 ):
     temp_file_path = None
-
     try:
         with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename)[1]) as temp_file:
             temp_file_path = temp_file.name
